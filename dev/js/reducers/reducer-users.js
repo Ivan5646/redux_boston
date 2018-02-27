@@ -16,7 +16,7 @@ export default function(){
             last: "Wasilenko",
             age: 27,
             description: "Joby loves the packers, cheese and tutrles",
-            thumbnail: "http://i.imgur.com/52xRlm8.jpg"
+            thumbnail: "http://i.imgur.com/52xRlm8.png"
         },
         {
             id: 3,
@@ -24,7 +24,7 @@ export default function(){
             last: "Williams",
             age: 24,
             description: "Madi likes her dog but it is really annoying",
-            thumbnail: "http://i.imgur.com/4EMtxHB.jpg"
+            thumbnail: "http://i.imgur.com/4EMtxHB.png"
         }
     ]
 }
