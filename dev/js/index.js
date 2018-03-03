@@ -1,9 +1,14 @@
 import 'babel-polyfill'; 
 import React from 'react';
-import ReactDOM from "react-dom"; // all imported from node modules
+import ReactDOM from "react-dom"; // all above imported from node modules
+import Provider from 'react-redux';
 import {createStore} from "redux"; // {} means import a var or function from package
 import allReducers from "./reducers";
+import App from './components/app';
 
-const Store = createStore(allReducers);
+const store = createStore(allReducers);
 
-ReactDOM.render(<h1>hey now</h1>, document.getElementById('root'));
+ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+);
