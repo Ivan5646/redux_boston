@@ -8,9 +8,8 @@ import App from './components/app';
 
 const store = createStore(allReducers);
 
-// here <Provider store={store}>  every component has access to store data now  
 ReactDOM.render(
-    <Provider store={store}>   
+    <Provider store={store}>   // every component has access to store data now 
         <App/>
     </Provider>,
     document.getElementById('root')

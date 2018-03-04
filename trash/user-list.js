@@ -16,7 +16,7 @@ class UserList extends Component {
 
 function mapStateToProps(state){ //takes a piece of state which is part of the Store and sends it to the Component as props
     return {
-        users: state.users // https://youtu.be/wa1NaL_WWpI?t=2m1s. It equals to reducer-users.js object, it was imported in reducers/index.js as "users"
+        users: state.users // what the heck is state.users ? https://youtu.be/wa1NaL_WWpI?t=2m1s. It equals to reducer-users.js object, it was imported in reducers/index.js as "users"
     };
 }
 
