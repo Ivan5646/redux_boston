@@ -2,7 +2,7 @@ const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
-        state,
+        ...state,
         {
           id: action.id,
           text: action.text,
@@ -19,5 +19,5 @@ const todos = (state = [], action) => {
       return state
   }
 }
- 
+
 export default todos
