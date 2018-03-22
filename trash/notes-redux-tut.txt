@@ -1,4 +1,6 @@
- ...state, wtf is this? of course it is giving an error
+Plan
+Use source code https://github.com/rajaraodv/redux/tree/master/examples/todos. After understanding, I can use source code from redux.org to build an app with server interaction.
+
 
 
  https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a
