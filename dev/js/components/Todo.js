@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Todo = ({ onClick, completed, text }) => (
+const Todo = ({ onClick, completed, text }) => ( // where are these arguments passed? in TodoList.js I see only onClick
   <li
     onClick={onClick}
     style={{
