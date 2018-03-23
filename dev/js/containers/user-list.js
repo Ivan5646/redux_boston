@@ -6,7 +6,7 @@ import {selectUser} from '../actions/index';
 class UserList extends Component {
 
     createListItems() {
-        return this.props.users.map((user) => {
+        return this.props.users.map((user) => { // users is available because it has been passed to the Store through allReducers in main index.js
             return (
                 <li 
                     key={user.id}

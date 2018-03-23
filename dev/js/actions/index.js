@@ -1,7 +1,7 @@
-export const selectUser = (user) => { // this is an Action Creator
-    console.log("You clicked on user: ", user.first);
+export const selectUser = (chlen) => { // this is an Action Creator. How the fuck the argument is referred to user object?
+    console.log("You clicked on user: ", chlen.chlen);
     return { // this is the action itself or object
-        type: "USER_SELECTED",
-        payload: user
+        type: "USER_SELECTED", // wtf is this?
+        payload: chlen
     }
 }
