@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import Todo from './Todo'
 
+
+// it receives todos arrays and onTodoClick callback funciton from parent container component (VisibleTodoList apparently)
 const TodoList = ({ todos, onTodoClick }) => (
   <ul>
     {todos.map(todo =>

@@ -2,6 +2,9 @@ Plan
 Use source code https://github.com/rajaraodv/redux/tree/master/examples/todos. After understanding, I can use source code from redux.org to build an app with server interaction.
 
 
+Stopped at
+7.3 Create Container Component — Filter Container
+
 
  https://medium.com/@rajaraodv/step-by-step-guide-to-building-react-redux-apps-using-mocks-48ca0f47f9a
  Redux — A complimentary library to React that provides a way to easily keep the data(State) and the events(Actions).

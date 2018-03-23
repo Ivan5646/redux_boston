@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 
-const Link = ({ active, children, onClick }) => {
+const Link = ({ active, children, onClick }) => { // what are children, and other arguments?
   if (active) {
     return <span>{children}</span>
   }

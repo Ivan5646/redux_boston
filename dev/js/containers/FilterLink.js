@@ -4,7 +4,7 @@ import Link from '../components/Link'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    active: ownProps.filter === state.visibilityFilter
+    active: ownProps.filter === state.visibilityFilter // well state is the Store's state, and wtf is visibilityFilter?
   }
 }
 
