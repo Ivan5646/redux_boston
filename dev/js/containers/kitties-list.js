@@ -5,7 +5,7 @@ class KittiesList extends Component {
 
     render() {
         return (
-            <p> static content </p>
+            <p> {this.props.kitties[0].name} </p>
         )
     }
 }
