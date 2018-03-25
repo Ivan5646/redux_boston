@@ -1,3 +1,10 @@
+app structure
+Add item path...
+index.js -> reducers (todoApp) -> reducers/todo.js -> actions (addTodo) -> containers/AddTodo.js -> components/app.js
+
+
+
+
 Plan
 Use source code https://github.com/rajaraodv/redux/tree/master/examples/todos. After understanding, I can use source code from redux.org to build an app with server interaction.
 
