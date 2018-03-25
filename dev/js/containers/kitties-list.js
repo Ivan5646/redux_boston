@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
+import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import {testAction} from '../actions/index';
 
 class KittiesList extends Component { 
 
     render() {
         return (
-            <p> {this.props.kitties[0].name} </p>
+            <p onClick={() => this.props.testAction()}> 
+                {this.props.kitties[0].name} 
+            </p>
         )
     }
 }
@@ -16,8 +20,8 @@ function mapStateToProps(state){ //takes a piece of state which is part of the S
     };
 }
 
-// function matchDispathToProps(dispatch){
-//     return bindActionCreators({selectUser: selectUser}, dispatch)
-// }
+function matchDispathToProps(dispatch){
+    return bindActionCreators({testAction: testAction}, dispatch)
+}
 
-export default connect(mapStateToProps)(KittiesList); // this is now a contanier
+export default connect(mapStateToProps, matchDispathToProps)(KittiesList); // this is now a contanier

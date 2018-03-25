@@ -1,4 +1,22 @@
 stopped at https://www.youtube.com/watch?v=ZRE6e_0eQeQ
 
-write down the app structure
+the app structure
+Based on thenewboston's redux tutorial  https://github.com/Ivan5646/redux_boston/blob/master
 
+index.js -> 
+actions/index.js (by default all actions are sent to reducers/index.js) ->
+reducers/index.js 
+
+containers (are imported in components) -> components
+
+actions/index.js (is imported to, and assigned to onCLick for <li>) ->  container/user-list.js
+
+
+https://youtu.be/wa1NaL_WWpI?t=3m passing data to component and Store
+data (everything that is in redusers)has been passed to the Store through allReducers in main index.js
+
+
+Event handling.
+1) Entry point: onClick event is assigned in containers/user-list.js with the name of the action.
+2) Triggers the action in actions.
+3) The action is sent to reducers and the engaged reducer is giving the new part of state.

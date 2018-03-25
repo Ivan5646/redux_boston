@@ -5,3 +5,10 @@ export const selectUser = (chlen) => { // this is an Action Creator. How the fuc
         payload: chlen
     }
 }
+
+export const testAction = () => {
+    console.log("hi from testAction");
+    return {
+        type: "TEST_ACTION"
+    }
+}
