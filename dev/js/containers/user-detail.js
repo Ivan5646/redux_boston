@@ -19,7 +19,7 @@ class UserDetail extends Component {
 
 function mapStateToProps(state){ 
     return {
-        user: state.activeUser // wtf is state.activeUser?
+        user: state.activeUser // activeUser is the name of the reducer
     };
 }
 
