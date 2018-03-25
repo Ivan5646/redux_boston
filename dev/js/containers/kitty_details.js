@@ -8,7 +8,7 @@ class KittyDetails extends Component {
         }
         return (
             <div>
-                <p>{this.props.kitty}</p>
+                <p>{this.props.kitty.color}</p>
             </div>
         );
     }

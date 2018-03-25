@@ -5,14 +5,24 @@ import {testAction} from '../actions/index';
 
 class KittiesList extends Component { 
 
+    createListItems() {
+        return this.props.kitties.map((kitty) => { 
+            return (
+                <li 
+                    key={kitty.id}
+                    onClick={() => this.props.testAction(kitty)} 
+                > 
+                    {kitty.name}
+                </li>
+            );
+        });
+    }
+
     render() {
         return (
-            <ul onClick={() => this.props.testAction(this.props.kitties[0].color)}>
-                <li>{this.props.kitties[0].name} </li>
-                <li>{this.props.kitties[1].name}</li>
-                <li>{this.props.kitties[2].name}</li>
+            <ul>
+                {this.createListItems()}
             </ul>
-
         )
     }
 }
