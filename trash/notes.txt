@@ -17,6 +17,6 @@ data (everything that is in redusers)has been passed to the Store through allRed
 
 
 Event handling.
-1) Entry point: onClick event is assigned in containers/user-list.js with the name of the action.
+1) Entry point: onClick event is assigned in containers/user-list.js with the name of the action (the action is the callback that passed to onClick).
 2) Triggers the action in actions.
 3) The action is sent to reducers and the engaged reducer is giving the new part of state.
