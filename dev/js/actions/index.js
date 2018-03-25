@@ -6,9 +6,10 @@ export const selectUser = (chlen) => { // this is an Action Creator. How the fuc
     }
 }
 
-export const testAction = () => {
-    console.log("hi from testAction");
+export const testAction = (arg) => {
+    console.log(arg.name);
     return {
-        type: "TEST_ACTION"
+        type: "TEST_ACTION",
+        payload: arg
     }
 }

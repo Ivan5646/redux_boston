@@ -7,7 +7,7 @@ class KittiesList extends Component {
 
     render() {
         return (
-            <p onClick={() => this.props.testAction()}> 
+            <p onClick={() => this.props.testAction(this.props.kitties[0].color)}> 
                 {this.props.kitties[0].name} 
             </p>
         )
