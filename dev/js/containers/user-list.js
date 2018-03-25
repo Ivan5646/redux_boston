@@ -10,7 +10,7 @@ class UserList extends Component {
             return (
                 <li 
                     key={user.id}
-                    onClick={() => this.props.selectUser(user)}
+                    onClick={() => this.props.selectUser(user)} // user is the same arg that is inside map(user)?
                 > 
                     {user.first} {user.last} 
                 </li>
