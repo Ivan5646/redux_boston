@@ -3,7 +3,7 @@
 
 export default function(state=null, action) {
     switch(action.type) {
-        case "USER_SELECTED": //wtf is this?
+        case "USER_SELECTED": // type of the action. It was created in actionss
         return action.payload;
         break;
     }
