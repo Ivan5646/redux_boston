@@ -1,0 +1,32 @@
+errors, maybe have something to do with webpack file code, bable preset?
+https://stackoverflow.com/questions/40063241/unexpected-token-proptypes
+
+index.js?1012:7 Uncaught Error: Cannot find module "./reducers"
+    at webpackMissingModule (eval at <anonymous> (bundle.min.js:811), <anonymous>:19:81)
+    at Object.eval (eval at <anonymous> (bundle.min.js:811), <anonymous>:19:168)
+    at eval (eval at <anonymous> (bundle.min.js:811), <anonymous>:41:30)
+    at Object.<anonymous> (bundle.min.js:811)
+    at __webpack_require__ (bundle.min.js:20)
+    at Object.<anonymous> (bundle.min.js:48)
+    at __webpack_require__ (bundle.min.js:20)
+    at bundle.min.js:40
+    at bundle.min.js:43
+webpackMissingModule @ index.js?1012:7
+(anonymous) @ index.js?1012:7
+(anonymous) @ index.js?1012:21
+(anonymous) @ bundle.min.js:811
+__webpack_require__ @ bundle.min.js:20
+(anonymous) @ bundle.min.js:48
+__webpack_require__ @ bundle.min.js:20
+(anonymous) @ bundle.min.js:40
+(anonymous) @ bundle.min.js:43
+client?843a:37 [WDS] Errors while compiling.
+client?843a:75 ./dev/js/containers/App.js
+Module build failed: SyntaxError: C:/web_projects/React/redux_boston/dev/js/containers/App.js: Unexpected token (9:19)
+
+   7 | 
+   8 | class App extends Component {
+>  9 |   static propTypes = {
+     |                    ^
+  10 |     selectedSubreddit: PropTypes.string.isRequired,
+  11 |     posts: PropTypes.array.isRequired,
