@@ -12,6 +12,7 @@ const App = () => (
         <h2>User Details:</h2>
         <UserDetail />
         <hr/>
+        <h2>Posts:</h2>
         <Posts />
     </div>
 );

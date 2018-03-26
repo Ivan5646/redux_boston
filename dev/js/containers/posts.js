@@ -32,6 +32,7 @@ class Posts extends Component {
     render() {
       return (
         <ul>
+            <li>test list item</li>
         {
             this.props.posts && 
             this.props.posts.map((post) =>{
