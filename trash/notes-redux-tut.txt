@@ -1,3 +1,10 @@
+app structure
+Add item path...
+index.js -> reducers (todoApp) -> reducers/todo.js -> actions (addTodo) -> containers/AddTodo.js -> components/app.js
+
+
+
+
 Plan
 Use source code https://github.com/rajaraodv/redux/tree/master/examples/todos. After understanding, I can use source code from redux.org to build an app with server interaction.
 
@@ -44,6 +51,3 @@ const todo = (state = [], action) => {
 Redux Term: “Presentational” and “Container” Components
 Keeping React and Redux logic inside each component can make it messy, so Redux recommends creating a dummy presentation only component called “Presentational” component and a parent wrapper component called “Container” component that deals w/ Redux, dispatch “Actions” and more. 
 The parent Container then passes the data to the presentational component, handle events, deal with React on behalf of Presentational component.
-
-
-

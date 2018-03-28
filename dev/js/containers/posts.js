@@ -1,32 +1,13 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError} from '../actions/index';
+import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError, fetchPostsWithRedux} from '../actions/index';
  
-function fetchPostsWithRedux() {
-    return (dispatch) => {
-    dispatch(fetchPostsRequest());
-    return fetchPosts().then(([response, json]) =>{
-        if(response.status === 200){
-        dispatch(fetchPostsSuccess(json))
-      }
-      else{
-        dispatch(fetchPostsError())
-      }
-    })
-  }
-}
-
-function fetchPosts() {
-  const URL = "https://jsonplaceholder.typicode.com/posts";
-  return fetch(URL, { method: 'GET'})
-     .then( response => Promise.all([response, response.json()]));
-}
 
 class Posts extends Component {
 
     componentDidMount(){
-        this.props.fetchPostsWithRedux()
+        this.props.fetchPostsWithRedux() //how do I handle this?
     }
 
     render() {
