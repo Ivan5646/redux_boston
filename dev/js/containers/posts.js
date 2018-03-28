@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
-import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError, fetchPostsWithRedux} from '../actions/index';
+import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError, fetchPostsWithRedux, test} from '../actions/index';
  
 
 class Posts extends Component {
 
-    componentDidMount(){
-        this.props.fetchPostsWithRedux() //how do I handle this?
-    }
+    // componentDidMount(){
+    //     this.props.fetchPostsWithRedux() //how do I handle this?
+    // }
 
     render() {
       return (
         <ul>
-            <li>test list item</li>
+            <li onClick={() => this.props.test()}>test list item</li>
         {
             this.props.posts && 
             this.props.posts.map((post) =>{
@@ -33,8 +33,8 @@ function mapStateToProps(state){
     }
 }
 
-// function matchDispathToProps(dispatch){ 
+function matchDispathToProps(dispatch){
+    return bindActionCreators({test: test}, dispatch)
+}
 
-// }
-
-export default connect(mapStateToProps, {fetchPostsWithRedux})(Posts); // this is now a contanier
+export default connect(mapStateToProps, matchDispathToProps)(Posts); // this is now a contanier

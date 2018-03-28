@@ -45,3 +45,11 @@ export const fetchPosts = () => {
   return fetch(URL, { method: 'GET'})
      .then( response => Promise.all([response, response.json()]));
 }
+
+export const test = () => {
+  console.log("hi from action test function");
+  return { 
+    type: "TEST_FIRED", 
+    payload: "test function"
+  }
+}
