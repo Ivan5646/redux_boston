@@ -6,13 +6,14 @@ import {fetchPostsRequest, fetchPostsSuccess, fetchPostsError, fetchPostsWithRed
 
 class Posts extends Component {
 
-    // componentDidMount(){
-    //     this.props.fetchPostsWithRedux() //how do I handle this?
-    // }
+    componentDidMount(){
+        this.props.fetchPostsWithRedux() //how do I handle this?
+    }
 
     render() {
       return (
-        <ul>
+        <p>{this.props.fetchPostsWithRedux().toString()}</p>
+        /*<ul>
             <li onClick={() => this.props.test()}>test list item</li>
         {
             this.props.posts && 
@@ -22,7 +23,7 @@ class Posts extends Component {
                     )
             })
         }
-        </ul>
+        </ul>*/
         )
     }
 }
@@ -34,7 +35,7 @@ function mapStateToProps(state){
 }
 
 function matchDispathToProps(dispatch){
-    return bindActionCreators({test: test}, dispatch)
+    return bindActionCreators({test: test, fetchPostsWithRedux: fetchPostsWithRedux}, dispatch)
 }
 
 export default connect(mapStateToProps, matchDispathToProps)(Posts); // this is now a contanier
