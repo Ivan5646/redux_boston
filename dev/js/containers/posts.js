@@ -18,9 +18,10 @@ class Posts extends Component {
     // logout();
 
     render() {
+        console.log("props.posts: " + this.props.posts);
       return (
        /* <p>{this.props.fetchPostsWithRedux().toString()}</p> */
-       <p>{this.props.posts}</p>  /* Uncaught (in promise) Error: Objects are not valid as a React child */
+       <p>{this.props.posts}</p>  /*Uncaught (in promise) Error: Objects are not valid as a React child */
 
        /* this.props.posts.map is not a function */
         /*<ul>
