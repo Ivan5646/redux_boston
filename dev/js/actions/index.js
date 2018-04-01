@@ -1,50 +1,55 @@
-export const REQUEST_POSTS = 'REQUEST_POSTS'
-export const RECEIVE_POSTS = 'RECEIVE_POSTS'
-export const SELECT_SUBREDDIT = 'SELECT_SUBREDDIT'
-export const INVALIDATE_SUBREDDIT = 'INVALIDATE_SUBREDDIT'
-
-export const selectSubreddit = subreddit => ({
-  type: SELECT_SUBREDDIT,
-  subreddit
-})
-
-export const invalidateSubreddit = subreddit => ({
-  type: INVALIDATE_SUBREDDIT,
-  subreddit
-})
-
-export const requestPosts = subreddit => ({
-  type: REQUEST_POSTS,
-  subreddit
-})
-
-export const receivePosts = (subreddit, json) => ({
-  type: RECEIVE_POSTS,
-  subreddit,
-  posts: json.data.children.map(child => child.data),
-  receivedAt: Date.now()
-})
-
-const fetchPosts = subreddit => dispatch => {
-  dispatch(requestPosts(subreddit))
-  return fetch(`https://www.reddit.com/r/${subreddit}.json`)
-    .then(response => response.json())
-    .then(json => dispatch(receivePosts(subreddit, json)))
+export const selectUser = (chlen) => { // this is an Action Creator. How the fuck the argument is referred to user object?
+    console.log("You clicked on user: ", chlen.first);
+    return { // this is the action itself or object
+        type: "USER_SELECTED", 
+        payload: chlen
+    }
 }
 
-const shouldFetchPosts = (state, subreddit) => {
-  const posts = state.postsBySubreddit[subreddit]
-  if (!posts) {
-    return true
+// fetch server data process
+export const fetchPostsRequest = () => {
+  return {
+    type: "FETCH_REQUEST"
   }
-  if (posts.isFetching) {
-    return false
-  }
-  return posts.didInvalidate
 }
 
-export const fetchPostsIfNeeded = subreddit => (dispatch, getState) => {
-  if (shouldFetchPosts(getState(), subreddit)) {
-    return dispatch(fetchPosts(subreddit))
+export const fetchPostsSuccess = (payload) => {
+  return {
+    type: "FETCH_SUCCESS",
+    payload
+  }
+}
+
+export const fetchPostsError = ()  => {
+  return {
+    type: "FETCH_ERROR"
+  }
+}
+
+export const fetchPostsWithRedux = () => {
+    return (dispatch) => {
+    dispatch(fetchPostsRequest());
+    return fetchPosts().then(([response, json]) =>{
+        if(response.status === 200){
+        dispatch(fetchPostsSuccess(json))
+      }
+      else{
+        dispatch(fetchPostsError())
+      }
+    })
+  }
+}
+
+export const fetchPosts = () => {
+  const URL = "https://jsonplaceholder.typicode.com/posts";
+  return fetch(URL, { method: 'GET'})
+     .then( response => Promise.all([response, response.json()]));
+}
+
+export const test = () => {
+  console.log("hi from action test function");
+  return { 
+    type: "TEST_FIRED", 
+    payload: "test function"
   }
 }
