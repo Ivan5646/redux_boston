@@ -1,9 +1,9 @@
-export default function(state = {}, action) {
+export default function(state = null, action) { // state = {} - nothing renders
   switch (action.type) {
     case "FETCH_REQUEST":
       return state;
     case "FETCH_SUCCESS": 
-      return {...state, posts: action.payload};
+      return {state, posts: action.payload}; //...state - unexpected token
     default:
       return state;
   }

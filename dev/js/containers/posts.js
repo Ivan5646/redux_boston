@@ -10,14 +10,24 @@ class Posts extends Component {
         this.props.fetchPostsWithRedux() //how do I handle this?
     }
 
+    // logout() {
+    //    var myArray = Object.values(this.props.fetchPostsWithRedux());
+    //    console.log(myArray);
+    // }
+
+    // logout();
+
     render() {
       return (
-        <p>{this.props.fetchPostsWithRedux().toString()}</p>
+       /* <p>{this.props.fetchPostsWithRedux().toString()}</p> */
+       <p>{this.props.posts}</p>  /* Uncaught (in promise) Error: Objects are not valid as a React child */
+
+       /* this.props.posts.map is not a function */
         /*<ul>
             <li onClick={() => this.props.test()}>test list item</li>
         {
             this.props.posts && 
-            this.props.posts.map((post) =>{
+            this.props.posts.map((post) =>{ 
                 return(
                     <li>{post.title}</li>
                     )
