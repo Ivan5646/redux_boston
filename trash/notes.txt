@@ -1,4 +1,30 @@
-stopped at https://www.youtube.com/watch?v=ZRE6e_0eQeQ
+Based on thenewboston's redux tutorial  https://github.com/Ivan5646/redux_boston/blob/master
 
-write down the app structure
+index.js -> 
+actions/index.js (by default all actions are sent to reducers/index.js) ->
+reducers/index.js 
+
+containers (are imported in components) -> components
+
+actions/index.js (is imported to, and assigned to onCLick for <li>) ->  container/user-list.js
+
+
+https://youtu.be/wa1NaL_WWpI?t=3m passing data to component and Store
+data (everything that is in reducers) has been passed to the Store through allReducers in main index.js
+
+
+Event handling.
+1) Entry point: onClick event is assigned in containers/user-list.js with the name of the action (the action is the callback that passed to onClick).
+2) Triggers the action in actions.
+3) The action is sent to reducers and the engaged reducer is giving the new part of state.
+
+
+Fetching data from server structure, not sure if it is the right way
+root index.js has const middleware = [ thunk ] (I don't know what the f it does) ->
+
+trying to figutre out fetching process
+1) in actions/index.js in fetchPostsWithRedux() (with the help of other functions) is written functionality to fetch the data 
+2) in containers/posts.js fetchPostsWithRedux() is called inside componentDidMount()
+3) The action is sent to reducers/reducer-posts.js ... FETCH_SUCCESS happens and it updates the state
+
 
