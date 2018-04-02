@@ -18,10 +18,23 @@ class Posts extends Component {
     // logout();
 
     render() {
-        console.log("props.posts: " + this.props.posts);
+        var obj = this.props.posts;
+        console.log("before converting to object: " + obj);
+        // console.log(Object.values(obj));
+
+        //cpnvert object to array
+        // var dataArray = new Array;
+        // for(var o in obj) {
+        //     dataArray.push(obj[o]);
+        // }
+
+        for(var property in obj) {
+            console.log(property + "=" + obj[property]);
+        }
+
       return (
        /* <p>{this.props.fetchPostsWithRedux().toString()}</p> */
-       <p>{this.props.posts}</p>  /*Uncaught (in promise) Error: Objects are not valid as a React child */
+       <p>hey</p>  /*Uncaught (in promise) Error: Objects are not valid as a React child */
 
        /* this.props.posts.map is not a function */
         /*<ul>
