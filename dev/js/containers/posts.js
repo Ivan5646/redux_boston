@@ -29,7 +29,15 @@ class Posts extends Component {
         // }
 
         for(var property in obj) {
-            console.log(property + "=" + obj[property]);
+            console.log("(for in statement) " + property + ": " + obj[property]);
+            var innerObj = obj[property];
+            for(var x in innerObj) {
+                console.log("innerObj: " + x + ": " + innerObj[x]);
+                var innerObj2 = innerObj[x];
+                for(var y in innerObj2) {
+                    console.log("innerObj2: " + y + ": " + innerObj2[y]);
+                }
+            }
         }
 
       return (
