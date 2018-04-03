@@ -56,3 +56,9 @@ for(var o in obj) {
         )
     }
 }
+
+
+https://www.reddit.com/r/reactjs/comments/32vtsn/loop_through_an_object_inside_of_the_render_method/
+{Object.keys(yourObject).map(function(key) {
+    return <div>Key: {key}, Value: {yourObject[key]}</div>;
+})}

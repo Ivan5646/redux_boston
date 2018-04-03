@@ -11,7 +11,7 @@ class Posts extends Component {
     }
 
     render(){
-      //var obj = this.props.posts;
+      // var obj = this.props.posts;
 
       function getValue(key, index) {
         return myObject[key];
@@ -20,12 +20,13 @@ class Posts extends Component {
       return (
         <div>
         hey
-        {Object.keys(this.props.posts).map(function(key) {
-            return <div>Key: {key}, Value: {this.props.posts[key]}</div>;
-        })}
-
+        {
+            Object.keys(this.props.posts).map((key) => {
+                return <div>Key: {key}, Value: {this.props.posts[key]}</div>;
+            })
+        }
         </div>
-        )
+      )
     }
 }
 
