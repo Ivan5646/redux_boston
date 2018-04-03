@@ -20,45 +20,37 @@ class Posts extends Component {
     render() {
         var obj = this.props.posts;
         console.log("before converting to object: " + obj);
-        // console.log(Object.values(obj));
 
-        //cpnvert object to array
-        // var dataArray = new Array;
-        // for(var o in obj) {
-        //     dataArray.push(obj[o]);
+        // for(var property in obj) {
+        //     console.log("(for in statement) " + property + ": " + obj[property]);
+        //     var innerObj = obj[property];
+        //     for(var x in innerObj) {
+        //         console.log("innerObj: " + x + ": " + innerObj[x]);
+        //         var innerObj2 = innerObj[x];
+        //         for(var y in innerObj2) {
+        //             console.log("innerObj2: " + y + ": " + innerObj2[y]);
+        //         }
+        //     }
         // }
 
+
         for(var property in obj) {
-            console.log("(for in statement) " + property + ": " + obj[property]);
             var innerObj = obj[property];
             for(var x in innerObj) {
-                console.log("innerObj: " + x + ": " + innerObj[x]);
                 var innerObj2 = innerObj[x];
+                var renderElx = innerObj[x];
                 for(var y in innerObj2) {
-                    console.log("innerObj2: " + y + ": " + innerObj2[y]);
+                    var renderEl = innerObj2[y];
                 }
             }
         }
 
       return (
-       /* <p>{this.props.fetchPostsWithRedux().toString()}</p> */
-       <p>hey</p>  /*Uncaught (in promise) Error: Objects are not valid as a React child */
-
-       /* this.props.posts.map is not a function */
-        /*<ul>
-            <li onClick={() => this.props.test()}>test list item</li>
-        {
-            this.props.posts && 
-            this.props.posts.map((post) =>{ 
-                return(
-                    <li>{post.title}</li>
-                    )
-            })
-        }
-        </ul>*/
+            <p>{renderEl}</p>
         )
     }
 }
+
 
 function mapStateToProps(state){
     return {
