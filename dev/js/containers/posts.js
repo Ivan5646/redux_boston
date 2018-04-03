@@ -10,43 +10,21 @@ class Posts extends Component {
         this.props.fetchPostsWithRedux() //how do I handle this?
     }
 
-    // logout() {
-    //    var myArray = Object.values(this.props.fetchPostsWithRedux());
-    //    console.log(myArray);
-    // }
+    render(){
+      //var obj = this.props.posts;
 
-    // logout();
-
-    render() {
-        var obj = this.props.posts;
-        console.log("before converting to object: " + obj);
-
-        // for(var property in obj) {
-        //     console.log("(for in statement) " + property + ": " + obj[property]);
-        //     var innerObj = obj[property];
-        //     for(var x in innerObj) {
-        //         console.log("innerObj: " + x + ": " + innerObj[x]);
-        //         var innerObj2 = innerObj[x];
-        //         for(var y in innerObj2) {
-        //             console.log("innerObj2: " + y + ": " + innerObj2[y]);
-        //         }
-        //     }
-        // }
-
-
-        for(var property in obj) {
-            var innerObj = obj[property];
-            for(var x in innerObj) {
-                var innerObj2 = innerObj[x];
-                var renderElx = innerObj[x];
-                for(var y in innerObj2) {
-                    var renderEl = innerObj2[y];
-                }
-            }
-        }
+      function getValue(key, index) {
+        return myObject[key];
+      }
 
       return (
-            <p>{renderEl}</p>
+        <div>
+        hey
+        {Object.keys(this.props.posts).map(function(key) {
+            return <div>Key: {key}, Value: {this.props.posts[key]}</div>;
+        })}
+
+        </div>
         )
     }
 }

@@ -1,4 +1,4 @@
-export default function(state = null, action) { // state = {} - nothing renders
+export default function(state = {}, action) { // state = {} - nothing renders
   switch (action.type) {
     case "FETCH_REQUEST":
       return state;
