@@ -1,3 +1,37 @@
+//tried ro render on the page
+class Posts extends Component {
+
+    componentDidMount(){
+        this.props.fetchPostsWithRedux() //how do I handle this?
+    }
+
+    render(){
+       var myData = this.props.posts;
+
+      return (
+        <div>{(myData) => {
+          obj = myData;
+          for(var property in obj) {
+            var innerObj = obj[property];
+            for(var x in innerObj) {
+                return <div>{innerObj[x].title}</div>
+            }
+          }
+        }
+      }</div>
+
+      )
+    }
+}
+
+
+for(var property in obj) {
+    var innerObj = obj[property];
+    for(var x in innerObj) {
+        return <div>{innerObj[x].id innerObj[x].title}</div>
+    }
+}
+
 cpnvert object to array
 var dataArray = new Array;
 for(var o in obj) {
@@ -62,3 +96,17 @@ https://www.reddit.com/r/reactjs/comments/32vtsn/loop_through_an_object_inside_o
 {Object.keys(yourObject).map(function(key) {
     return <div>Key: {key}, Value: {yourObject[key]}</div>;
 })}
+
+
+
+
+
+
+function iterateObject(obj) {
+  for(var property in obj) {
+    var innerObj = obj[property];
+    for(var x in innerObj) {
+        return innerObj[x].title
+    }
+  }
+}

@@ -10,26 +10,27 @@ class Posts extends Component {
         this.props.fetchPostsWithRedux() //how do I handle this?
     }
 
-    render(){
-      // var obj = this.props.posts;
-
-      function getValue(key, index) {
-        return myObject[key];
+    render() {
+      var obj = this.props.posts;
+      
+      for(var property in obj) {
+          console.log("(highest level object) " + property + ": " + obj[property]);
+          var innerObj = obj[property];
+          for(var x in innerObj) {
+              // console.log("innerObj: " + x + ": " + innerObj[x]);
+              console.log(innerObj[x].id + ". " + innerObj[x].title);
+              var innerObj2 = innerObj[x];
+              // for(var y in innerObj2) {
+              //     console.log("innerObj2: " + y + ": " + innerObj2[y]);
+              // }
+          }
       }
 
       return (
-        <div>
-        hey
-        {
-            Object.keys(this.props.posts).map((key) => {
-                return <div>Key: {key}, Value: {this.props.posts[key]}</div>;
-            })
-        }
-        </div>
-      )
+       <p>hey</p>  
+        )
     }
 }
-
 
 function mapStateToProps(state){
     return {
