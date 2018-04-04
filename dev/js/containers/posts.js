@@ -12,17 +12,12 @@ class Posts extends Component {
 
     render() {
       var obj = this.props.posts;
-      
+
       for(var property in obj) {
           console.log("(highest level object) " + property + ": " + obj[property]);
           var innerObj = obj[property];
           for(var x in innerObj) {
-              // console.log("innerObj: " + x + ": " + innerObj[x]);
               console.log(innerObj[x].id + ". " + innerObj[x].title);
-              var innerObj2 = innerObj[x];
-              // for(var y in innerObj2) {
-              //     console.log("innerObj2: " + y + ": " + innerObj2[y]);
-              // }
           }
       }
 
