@@ -21,8 +21,22 @@ class Posts extends Component {
           }
       }
 
+      function testFunction() {
+        var x = "hey from testFunction";
+        return x;
+      }
+
+      function iterateObject(object) {
+        for(var property in object) {
+          var innerObj = object[property];
+          for(var x in innerObj) {
+              return innerObj[x].title
+          }
+        }
+      }
+
       return (
-       <p>hey</p>  
+       <p>{iterateObject(obj)}</p>  
         )
     }
 }
