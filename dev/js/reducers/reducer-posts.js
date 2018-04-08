@@ -1,22 +1,49 @@
-export default function(state = {}, action) { // state = {} - nothing renders
-  switch (action.type) {
-    case "FETCH_REQUEST":
-      return state;
-    case "FETCH_SUCCESS": 
-      return {state, posts: action.payload}; //...state - unexpected token
-    default:
-      return state;
-  }
-}
+export default function reducer(state={
+    tweets: [],
+    fetching: false,
+    fetched: false,
+    error: null,
+  }, action) {
 
-// original code
-// const reducer = (state = {}, action) => {
-//   switch (action.type) {
-//     case "FETCH_REQUEST":
-//       return state;
-//     case "FETCH_SUCCESS": 
-//       return {...state, posts: action.payload};
-//     default:
-//       return state;
-//   }
-// }
+    switch (action.type) {
+      case "FETCH_TWEETS": {
+        return {state, fetching: true}
+      }
+      case "FETCH_TWEETS_REJECTED": {
+        return {state, fetching: false, error: action.payload}
+      }
+      case "FETCH_TWEETS_FULFILLED": {
+        return {
+          state,
+          fetching: false,
+          fetched: true,
+          tweets: action.payload,
+        }
+      }
+      case "ADD_TWEET": {
+        return {
+          state,
+          tweets: [state.tweets, action.payload],
+        }
+      }
+      case "UPDATE_TWEET": {
+        const { id, text } = action.payload
+        const newTweets = [state.tweets]
+        const tweetToUpdate = newTweets.findIndex(tweet => tweet.id === id)
+        newTweets[tweetToUpdate] = action.payload;
+
+        return {
+          state,
+          tweets: newTweets,
+        }
+      }
+      case "DELETE_TWEET": {
+        return {
+          state,
+          tweets: state.tweets.filter(tweet => tweet.id !== action.payload),
+        }
+      }
+    }
+
+    return state
+}

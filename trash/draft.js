@@ -1,3 +1,15 @@
+// Cannot read property 'map' of undefined
+  return (
+   <p>{
+    this.props.posts.posts.map((post) =>{ 
+      return (
+        <div>{post.title}</div>
+      ) 
+    })
+   }</p>  
+  )
+
+
 //tried ro render on the page
 class Posts extends Component {
 
