@@ -11,20 +11,24 @@ class Posts extends Component {
     //     this.props.fetchPostsWithRedux() //how do I handle this?
     // }
 
-    // fetchTweets() {
-    //   this.props.fetchTweets()
-    // }
-
-    componentWillMount(){
-        this.props.fetchTweets()
+    fetchTweets() {
+      this.props.fetchTweets()
     }
+
+    // componentWillMount(){
+    //     this.props.fetchTweets()
+    // }
 
 
     render() {
       // console.log(this.props.posts)
+      // const myPosts = this.props.posts;
 
       return (
-       <p>{this.props.posts[0].title}</p>  
+
+        <button onClick={this.fetchTweets.bind(this)}>load posts</button>  
+
+
       )
     }
 }
